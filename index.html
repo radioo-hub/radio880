@@ -11,13 +11,13 @@
     
     <style>
         :root {
-            --primary-blue: #0d6efd;       /* Main Brand Blue */
-            --dark-blue: #0a2540;          /* Deep Navy/Blackish Blue */
-            --light-blue-bg: #f4f7fa;      /* Clean Light Background */
-            --hover-blue: #0b5ed7;         /* Darker Blue on Hover */
-            --text-main: #0f172a;          /* Main Text Color */
-            --text-muted: #64748b;         /* Secondary Text Color */
-            --border-color: #e2e8f0;       /* Soft Gray-Blue Borders */
+            --primary-blue: #0d6efd;
+            --dark-blue: #0a2540;
+            --light-blue-bg: #f4f7fa;
+            --hover-blue: #0b5ed7;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
             --shadow: 0 10px 20px rgba(13, 110, 253, 0.08);
         }
 
@@ -35,7 +35,7 @@
             line-height: 1.6;
         }
 
-        /* Top Closable Disclaimer Banner - Pure Navy & Blue */
+        /* Top Closable Disclaimer Banner */
         .top-banner {
             background-color: var(--dark-blue);
             color: #ffffff;
@@ -70,7 +70,7 @@
             color: #ffffff;
         }
 
-        /* Header / Navigation */
+        /* Header Navigation */
         header {
             background-color: #ffffff;
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
@@ -147,7 +147,7 @@
             transform: translateY(-2px);
         }
 
-        /* Mobile Menu Toggle Button */
+        /* Mobile Menu Toggle */
         .mobile-toggle {
             display: none;
             background: none;
@@ -158,7 +158,7 @@
             padding: 5px;
         }
 
-        /* Hero Section - Deep Blue Gradient */
+        /* Hero Section */
         .hero {
             background: linear-gradient(135deg, #0a2540 0%, #113a63 100%);
             color: #ffffff;
@@ -351,7 +351,7 @@
             line-height: 1.6;
         }
 
-        /* How It Works Section - Light Blue Accent */
+        /* How It Works Section */
         .how-it-works {
             background-color: var(--light-blue-bg);
             padding: 80px 24px;
@@ -478,7 +478,7 @@
             line-height: 1.6;
         }
 
-        /* Footer & Interlinking */
+        /* Footer */
         footer {
             background-color: var(--dark-blue);
             color: #94a3b8;
@@ -615,7 +615,7 @@
 
     <!-- Top Closable Disclaimer Banner -->
     <div class="top-banner" id="topDisclaimer">
-        <i class="fa-solid fa-circle-info"></i> <span>Independent Service Notice:</span> We provide third-party setup assistance & guide for satellite radio devices. Not affiliated with Sirius XM Holdings Inc.
+        <i class="fa-solid fa-circle-info"></i> <span>Independent Service Notice:</span> We provide third-party setup assistance & guidance for satellite radio devices. Not affiliated with Sirius XM Holdings Inc.
         <button class="close-disclaimer" onclick="dismissDisclaimer()" title="Close Disclaimer">&times;</button>
     </div>
 
@@ -626,12 +626,12 @@
                 <i class="fa-solid fa-radio"></i> Radio <span>Service</span>
             </a>
 
-            <!-- Mobile Hamburger Toggle -->
+            <!-- Mobile Toggle -->
             <button class="mobile-toggle" onclick="toggleMenu()" aria-label="Toggle Menu">
                 <i class="fa-solid fa-bars" id="menuIcon"></i>
             </button>
 
-            <!-- Navigation Links & Call CTA -->
+            <!-- Navigation Links -->
             <div class="nav-container" id="navContainer">
                 <ul class="nav-links">
                     <li><a href="index.html#services">Services</a></li>
@@ -774,7 +774,7 @@
         </div>
     </section>
 
-    <!-- Footer with Interlinked Sub-Pages -->
+    <!-- Footer Section -->
     <footer>
         <div class="footer-container">
             <div class="footer-grid">
@@ -783,7 +783,6 @@
                     <p>Dedicated independent setup assistance, configuration advice, and user guide services for satellite radio receiver owners nationwide.</p>
                 </div>
                 
-                <!-- Sub-Page Interlinks Column 1: Services -->
                 <div class="footer-links">
                     <h4>Our Services</h4>
                     <ul>
@@ -794,7 +793,6 @@
                     </ul>
                 </div>
 
-                <!-- Sub-Page Interlinks Column 2: Company -->
                 <div class="footer-links">
                     <h4>Company Info</h4>
                     <ul>
@@ -804,7 +802,6 @@
                     </ul>
                 </div>
 
-                <!-- Sub-Page Interlinks Column 3: Legal & Policy -->
                 <div class="footer-links">
                     <h4>Legal & Policy</h4>
                     <ul>
@@ -815,20 +812,19 @@
                 </div>
             </div>
 
-            <!-- Legal Disclaimer Box -->
+            <!-- Standard Exact Disclaimer Box -->
             <div class="disclaimer-box">
-    <strong>Legal Disclaimer:</strong> All satellite radio product names, logos, brands, and trademarks displayed on this site are the property of their respective owners. Their appearance does not imply any partnership, authorization, or official affiliation with Radio Service. All content on this website is the intellectual property of Radio Service and/or its content providers and is protected under U.S. and international copyright laws. Any reproduction, distribution, or use of the content without prior written consent is strictly prohibited and may result in legal action. By accessing or using this website, you acknowledge and agree that Radio Service is an independent third-party guidance provider and is not liable for any direct, indirect, or incidental loss arising from information, offers, or external links provided herein. For inquiries, please contact us at support@radioservice.com.
-</div>
+                <strong>Legal Disclaimer:</strong> All satellite radio product names, logos, brands, and trademarks displayed on this site are the property of their respective owners. Their appearance does not imply any partnership, authorization, or official affiliation with xmradioservices.com. All content on this website is the intellectual property of xmradioservices.com and/or its content providers and is protected under U.S. and international copyright laws. Any reproduction, distribution, or use of the content without prior written consent is strictly prohibited and may result in legal action. By accessing or using this website, you acknowledge and agree that xmradioservices.com is an independent third-party guidance provider and is not liable for any direct, indirect, or incidental loss arising from information, offers, or external links provided herein. For inquiries, please contact us at support@xmradioservices.com.
+            </div>
 
             <div class="copyright">
-                &copy; 2026 Radio Service. All Rights Reserved. | Owned & Operated by Radio Service (MSME Registered Entity).
+                &copy; 2026 xmradioservices.com. All Rights Reserved. | Independent Third-Party Support Provider.
             </div>
         </div>
     </footer>
 
-    <!-- Open-Source JavaScript for Responsive Toggle & Disclaimer Close -->
+    <!-- JavaScript -->
     <script>
-        // Toggle Mobile Menu
         function toggleMenu() {
             const navContainer = document.getElementById('navContainer');
             const menuIcon = document.getElementById('menuIcon');
@@ -844,7 +840,6 @@
             }
         }
 
-        // Close Top Disclaimer Banner
         function dismissDisclaimer() {
             const disclaimer = document.getElementById('topDisclaimer');
             disclaimer.style.display = 'none';

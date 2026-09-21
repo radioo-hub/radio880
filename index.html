@@ -11,16 +11,14 @@
     
     <style>
         :root {
-            --primary-color: #0d6efd;
-            --primary-hover: #0b5ed7;
-            --secondary-color: #1e293b;
-            --accent-color: #ffc107;
-            --accent-hover: #e0a800;
-            --bg-light: #f8fafc;
-            --text-dark: #0f172a;
-            --text-muted: #64748b;
-            --border-color: #e2e8f0;
-            --shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1);
+            --primary-blue: #0d6efd;       /* Main Brand Blue */
+            --dark-blue: #0a2540;          /* Deep Navy/Blackish Blue */
+            --light-blue-bg: #f4f7fa;      /* Clean Light Background */
+            --hover-blue: #0b5ed7;         /* Darker Blue on Hover */
+            --text-main: #0f172a;          /* Main Text Color */
+            --text-muted: #64748b;         /* Secondary Text Color */
+            --border-color: #e2e8f0;       /* Soft Gray-Blue Borders */
+            --shadow: 0 10px 20px rgba(13, 110, 253, 0.08);
         }
 
         * {
@@ -32,26 +30,25 @@
         }
 
         body {
-            background-color: var(--bg-light);
-            color: var(--text-dark);
+            background-color: #ffffff;
+            color: var(--text-main);
             line-height: 1.6;
         }
 
-        /* Top Closable Disclaimer Banner */
+        /* Top Closable Disclaimer Banner - Pure Navy & Blue */
         .top-banner {
-            background-color: var(--secondary-color);
-            color: #f1f5f9;
+            background-color: var(--dark-blue);
+            color: #ffffff;
             text-align: center;
             padding: 10px 40px 10px 20px;
             font-size: 13px;
             font-weight: 500;
             position: relative;
             border-bottom: 1px solid rgba(255,255,255,0.1);
-            transition: all 0.3s ease;
         }
 
         .top-banner span {
-            color: var(--accent-color);
+            color: #60a5fa;
             font-weight: 600;
         }
 
@@ -76,7 +73,7 @@
         /* Header / Navigation */
         header {
             background-color: #ffffff;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -94,7 +91,7 @@
         .logo {
             font-size: 24px;
             font-weight: 800;
-            color: var(--primary-color);
+            color: var(--primary-blue);
             text-decoration: none;
             display: flex;
             align-items: center;
@@ -102,7 +99,7 @@
         }
 
         .logo span {
-            color: var(--secondary-color);
+            color: var(--dark-blue);
         }
 
         .nav-container {
@@ -120,18 +117,18 @@
 
         .nav-links a {
             text-decoration: none;
-            color: var(--text-dark);
+            color: var(--dark-blue);
             font-weight: 500;
             font-size: 15px;
             transition: color 0.2s;
         }
 
         .nav-links a:hover {
-            color: var(--primary-color);
+            color: var(--primary-blue);
         }
 
         .header-cta {
-            background-color: #22c55e;
+            background-color: var(--primary-blue);
             color: #ffffff !important;
             padding: 10px 22px;
             border-radius: 50px;
@@ -140,13 +137,13 @@
             align-items: center;
             gap: 8px;
             text-decoration: none;
-            box-shadow: 0 4px 10px rgba(34, 197, 94, 0.3);
-            transition: transform 0.2s, background 0.2s !important;
+            box-shadow: 0 4px 12px rgba(13, 110, 253, 0.25);
+            transition: background 0.2s, transform 0.2s !important;
             white-space: nowrap;
         }
 
         .header-cta:hover {
-            background-color: #16a34a !important;
+            background-color: var(--hover-blue) !important;
             transform: translateY(-2px);
         }
 
@@ -156,18 +153,17 @@
             background: none;
             border: none;
             font-size: 22px;
-            color: var(--secondary-color);
+            color: var(--dark-blue);
             cursor: pointer;
             padding: 5px;
         }
 
-        /* Hero Section */
+        /* Hero Section - Deep Blue Gradient */
         .hero {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            background: linear-gradient(135deg, #0a2540 0%, #113a63 100%);
             color: #ffffff;
-            padding: 90px 24px 70px;
+            padding: 90px 24px 80px;
             position: relative;
-            overflow: hidden;
         }
 
         .hero-container {
@@ -177,8 +173,6 @@
             grid-template-columns: 1.2fr 0.8fr;
             gap: 40px;
             align-items: center;
-            position: relative;
-            z-index: 1;
         }
 
         .hero-text h1 {
@@ -190,12 +184,12 @@
         }
 
         .hero-text h1 span {
-            color: #38bdf8;
+            color: #60a5fa;
         }
 
         .hero-text p {
             font-size: 18px;
-            color: #94a3b8;
+            color: #93c5fd;
             margin-bottom: 30px;
         }
 
@@ -207,7 +201,7 @@
         }
 
         .badge {
-            background: rgba(255,255,255,0.08);
+            background: rgba(255, 255, 255, 0.08);
             padding: 8px 16px;
             border-radius: 20px;
             font-size: 13px;
@@ -215,12 +209,13 @@
             display: flex;
             align-items: center;
             gap: 6px;
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #e2e8f0;
         }
 
         .btn-primary {
-            background-color: var(--accent-color);
-            color: #000;
+            background-color: var(--primary-blue);
+            color: #ffffff;
             padding: 16px 32px;
             font-size: 18px;
             font-weight: 700;
@@ -230,38 +225,59 @@
             align-items: center;
             gap: 10px;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 14px rgba(255, 193, 7, 0.4);
+            box-shadow: 0 4px 14px rgba(13, 110, 253, 0.4);
+            border: 1px solid rgba(255,255,255,0.2);
         }
 
         .btn-primary:hover {
-            background-color: var(--accent-hover);
+            background-color: var(--hover-blue);
             transform: translateY(-2px);
         }
 
         .hero-card {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.06);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             border-radius: 16px;
-            padding: 30px;
+            padding: 35px 25px;
             text-align: center;
         }
 
         .hero-card i {
             font-size: 48px;
-            color: var(--accent-color);
+            color: #60a5fa;
             margin-bottom: 15px;
         }
 
         .hero-card h3 {
             font-size: 22px;
             margin-bottom: 10px;
+            color: #ffffff;
         }
 
         .hero-card p {
             font-size: 14px;
             color: #cbd5e1;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+        }
+
+        .hero-card-phone {
+            color: #ffffff;
+            font-weight: 800;
+            text-decoration: none;
+            font-size: 22px;
+            background: rgba(13, 110, 253, 0.3);
+            padding: 12px 20px;
+            border-radius: 8px;
+            border: 1px solid rgba(96, 165, 250, 0.4);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: background 0.2s;
+        }
+
+        .hero-card-phone:hover {
+            background: rgba(13, 110, 253, 0.5);
         }
 
         /* Features Section */
@@ -279,8 +295,8 @@
 
         .section-header h2 {
             font-size: 32px;
-            color: var(--secondary-color);
-            font-weight: 700;
+            color: var(--dark-blue);
+            font-weight: 800;
             margin-bottom: 12px;
         }
 
@@ -306,14 +322,14 @@
         .feature-box:hover {
             transform: translateY(-5px);
             box-shadow: var(--shadow);
-            border-color: var(--primary-color);
+            border-color: var(--primary-blue);
         }
 
         .feature-icon {
             width: 60px;
             height: 60px;
-            background: rgba(13, 110, 253, 0.1);
-            color: var(--primary-color);
+            background: rgba(13, 110, 253, 0.08);
+            color: var(--primary-blue);
             border-radius: 12px;
             display: flex;
             align-items: center;
@@ -325,7 +341,8 @@
         .feature-box h3 {
             font-size: 20px;
             margin-bottom: 12px;
-            color: var(--secondary-color);
+            color: var(--dark-blue);
+            font-weight: 700;
         }
 
         .feature-box p {
@@ -334,9 +351,9 @@
             line-height: 1.6;
         }
 
-        /* How It Works */
+        /* How It Works Section - Light Blue Accent */
         .how-it-works {
-            background-color: #ffffff;
+            background-color: var(--light-blue-bg);
             padding: 80px 24px;
             border-top: 1px solid var(--border-color);
             border-bottom: 1px solid var(--border-color);
@@ -351,14 +368,18 @@
         }
 
         .step-card {
+            background: #ffffff;
+            padding: 30px 20px;
+            border-radius: 12px;
             text-align: center;
+            border: 1px solid var(--border-color);
         }
 
         .step-number {
             width: 50px;
             height: 50px;
-            background: var(--secondary-color);
-            color: #fff;
+            background: var(--dark-blue);
+            color: #ffffff;
             font-weight: 700;
             font-size: 20px;
             border-radius: 50%;
@@ -371,7 +392,8 @@
         .step-card h4 {
             font-size: 18px;
             margin-bottom: 10px;
-            color: var(--secondary-color);
+            color: var(--dark-blue);
+            font-weight: 700;
         }
 
         .step-card p {
@@ -381,8 +403,8 @@
 
         /* Call To Action Banner */
         .cta-banner {
-            background: linear-gradient(135deg, var(--primary-color) 0%, #004494 100%);
-            color: #fff;
+            background: linear-gradient(135deg, var(--dark-blue) 0%, var(--primary-blue) 100%);
+            color: #ffffff;
             padding: 60px 24px;
             text-align: center;
         }
@@ -395,17 +417,18 @@
         .cta-container h2 {
             font-size: 32px;
             margin-bottom: 15px;
+            font-weight: 800;
         }
 
         .cta-container p {
             font-size: 18px;
             margin-bottom: 30px;
-            opacity: 0.9;
+            color: #93c5fd;
         }
 
         .cta-phone-btn {
             background-color: #ffffff;
-            color: var(--primary-color);
+            color: var(--dark-blue);
             padding: 16px 36px;
             font-size: 22px;
             font-weight: 800;
@@ -415,11 +438,12 @@
             align-items: center;
             gap: 12px;
             box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-            transition: transform 0.2s;
+            transition: transform 0.2s, background-color 0.2s;
         }
 
         .cta-phone-btn:hover {
-            transform: scale(1.05);
+            transform: scale(1.03);
+            background-color: #f8fafc;
         }
 
         /* FAQ Section */
@@ -439,9 +463,9 @@
 
         .faq-question {
             padding: 20px;
-            font-weight: 600;
+            font-weight: 700;
             font-size: 17px;
-            color: var(--secondary-color);
+            color: var(--dark-blue);
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -454,9 +478,9 @@
             line-height: 1.6;
         }
 
-        /* Footer & Sub-Pages Interlinking */
+        /* Footer & Interlinking */
         footer {
-            background-color: #090d16;
+            background-color: var(--dark-blue);
             color: #94a3b8;
             padding: 60px 24px 30px;
             font-size: 13px;
@@ -478,15 +502,17 @@
             color: #ffffff;
             font-size: 20px;
             margin-bottom: 15px;
+            font-weight: 700;
         }
 
         .footer-links h4 {
             color: #ffffff;
             font-size: 16px;
             margin-bottom: 15px;
-            border-bottom: 2px solid var(--primary-color);
+            border-bottom: 2px solid var(--primary-blue);
             display: inline-block;
             padding-bottom: 5px;
+            font-weight: 600;
         }
 
         .footer-links ul {
@@ -509,7 +535,7 @@
         }
 
         .disclaimer-box {
-            background: rgba(255,255,255,0.03);
+            background: rgba(255,255,255,0.04);
             border: 1px solid rgba(255,255,255,0.08);
             padding: 20px;
             border-radius: 8px;
@@ -545,7 +571,7 @@
             }
 
             .nav-container {
-                display: none; /* Toggled via JS in mobile */
+                display: none;
                 position: absolute;
                 top: 100%;
                 left: 0;
@@ -589,7 +615,7 @@
 
     <!-- Top Closable Disclaimer Banner -->
     <div class="top-banner" id="topDisclaimer">
-        <i class="fa-solid fa-triangle-exclamation"></i> <span>Independent Service Notice:</span> We provide third-party setup assistance & guide for satellite radio devices. Not affiliated with Sirius XM Holdings Inc.
+        <i class="fa-solid fa-circle-info"></i> <span>Independent Service Notice:</span> We provide third-party setup assistance & guide for satellite radio devices. Not affiliated with Sirius XM Holdings Inc.
         <button class="close-disclaimer" onclick="dismissDisclaimer()" title="Close Disclaimer">&times;</button>
     </div>
 
@@ -614,8 +640,8 @@
                     <li><a href="about-us.html">About Us</a></li>
                     <li><a href="contact-us.html">Contact Us</a></li>
                 </ul>
-                <a href="tel:18000000000" class="header-cta">
-                    <i class="fa-solid fa-phone"></i> Call: 1-800-XXX-XXXX
+                <a href="tel:+14067474507" class="header-cta">
+                    <i class="fa-solid fa-phone"></i> Call: +1 (406) 747-4507
                 </a>
             </div>
         </div>
@@ -632,7 +658,7 @@
                 <h1>Comprehensive <span>Satellite Radio</span> Setup & Plan Guide</h1>
                 <p>Facing trouble activating your receiver, finding your Radio ID, or setting up home/car dock kits? Our experts provide instant step-by-step guidance over the phone.</p>
                 <div>
-                    <a href="tel:18000000000" class="btn-primary">
+                    <a href="tel:+14067474507" class="btn-primary">
                         <i class="fa-solid fa-headset"></i> Get Setup Guidance Now
                     </a>
                 </div>
@@ -641,8 +667,8 @@
                 <i class="fa-solid fa-circle-play"></i>
                 <h3>Need Immediate Help?</h3>
                 <p>Speak directly with an independent radio support guide to resolve your antenna, setup, or account navigation queries.</p>
-                <a href="tel:18000000000" style="color: var(--accent-color); font-weight: 700; text-decoration: none; font-size: 20px;">
-                    <i class="fa-solid fa-phone-volume"></i> 1-800-XXX-XXXX
+                <a href="tel:+14067474507" class="hero-card-phone">
+                    <i class="fa-solid fa-phone-volume"></i> +1 (406) 747-4507
                 </a>
             </div>
         </div>
@@ -713,8 +739,8 @@
         <div class="cta-container">
             <h2>Ready to Get Your Satellite Radio Ready?</h2>
             <p>Avoid setup confusion and channel activation delays. Speak to our independent support team now.</p>
-            <a href="tel:18000000000" class="cta-phone-btn">
-                <i class="fa-solid fa-phone"></i> Call 1-800-XXX-XXXX
+            <a href="tel:+14067474507" class="cta-phone-btn">
+                <i class="fa-solid fa-phone"></i> Call +1 (406) 747-4507
             </a>
         </div>
     </section>

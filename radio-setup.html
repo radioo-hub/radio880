@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radio Setup & Services Guide | xmradioservices.com</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-blue: #0d6efd;
+            --dark-blue: #0a2540;
+            --light-blue-bg: #f4f7fa;
+            --hover-blue: #0b5ed7;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+            --shadow: 0 10px 20px rgba(13, 110, 253, 0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* Top Closable Disclaimer Banner */
+        .top-banner {
+            background-color: var(--dark-blue);
+            color: #ffffff;
+            text-align: center;
+            padding: 10px 40px 10px 20px;
+            font-size: 13px;
+            font-weight: 500;
+            position: relative;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .top-banner span {
+            color: #60a5fa;
+            font-weight: 600;
+        }
+
+        .close-disclaimer {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: #94a3b8;
+            font-size: 18px;
+            cursor: pointer;
+            padding: 2px 6px;
+            transition: color 0.2s;
+        }
+
+        .close-disclaimer:hover {
+            color: #ffffff;
+        }
+
+        /* Header Navigation */
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 24px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary-blue);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--dark-blue);
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-blue);
+            font-weight: 500;
+            font-size: 15px;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-blue);
+        }
+
+        .header-cta {
+            background-color: var(--primary-blue);
+            color: #ffffff !important;
+            padding: 10px 22px;
+            border-radius: 50px;
+            font-weight: 600 !important;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(13, 110, 253, 0.25);
+            transition: background 0.2s, transform 0.2s !important;
+            white-space: nowrap;
+        }
+
+        .header-cta:hover {
+            background-color: var(--hover-blue) !important;
+            transform: translateY(-2px);
+        }
+
+        /* Mobile Toggle */
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 22px;
+            color: var(--dark-blue);
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        /* Inner Page Header Banner */
+        .page-header {
+            background: linear-gradient(135deg, #0a2540 0%, #113a63 100%);
+            color: #ffffff;
+            padding: 60px 24px;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 38px;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .page-header p {
+            color: #93c5fd;
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Detailed Services Content Section */
+        .services-detail {
+            padding: 70px 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-block {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            margin-bottom: 60px;
+            padding: 30px;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            background: #ffffff;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+        }
+
+        .service-block:nth-child(even) {
+            direction: rtl;
+        }
+
+        .service-block:nth-child(even) .service-content {
+            direction: ltr;
+        }
+
+        .service-content h2 {
+            font-size: 26px;
+            color: var(--dark-blue);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .service-content p {
+            color: var(--text-muted);
+            font-size: 15px;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .service-list {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .service-list li {
+            margin-bottom: 10px;
+            color: var(--text-main);
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .service-list i {
+            color: var(--primary-blue);
+        }
+
+        .service-box-card {
+            background: var(--light-blue-bg);
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px dashed var(--primary-blue);
+        }
+
+        .service-box-card i {
+            font-size: 45px;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+        }
+
+        .service-box-card h3 {
+            font-size: 20px;
+            color: var(--dark-blue);
+            margin-bottom: 10px;
+        }
+
+        /* CTA Banner */
+        .cta-banner {
+            background: linear-gradient(135deg, var(--dark-blue) 0%, var(--primary-blue) 100%);
+            color: #ffffff;
+            padding: 60px 24px;
+            text-align: center;
+        }
+
+        .cta-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-container h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        .cta-container p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #93c5fd;
+        }
+
+        .cta-phone-btn {
+            background-color: #ffffff;
+            color: var(--dark-blue);
+            padding: 16px 36px;
+            font-size: 22px;
+            font-weight: 800;
+            border-radius: 50px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .cta-phone-btn:hover {
+            transform: scale(1.03);
+            background-color: #f8fafc;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-blue);
+            color: #94a3b8;
+            padding: 60px 24px 30px;
+            font-size: 13px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 35px;
+            margin-bottom: 40px;
+        }
+
+        .footer-about h3 {
+            color: #ffffff;
+            font-size: 20px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .footer-links h4 {
+            color: #ffffff;
+            font-size: 16px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--primary-blue);
+            display: inline-block;
+            padding-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        .disclaimer-box {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            padding: 20px;
+            border-radius: 8px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            color: #cbd5e1;
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            padding-top: 25px;
+            color: #64748b;
+        }
+
+        /* Responsive Layout Fixes */
+        @media (max-width: 992px) {
+            .service-block { grid-template-columns: 1fr; direction: ltr !important; }
+            .service-block:nth-child(even) { direction: ltr !important; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-toggle { display: block; }
+            .nav-container {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: #ffffff;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+                border-top: 1px solid var(--border-color);
+            }
+            .nav-container.active { display: flex; }
+            .nav-links { flex-direction: column; gap: 15px; width: 100%; text-align: center; }
+            .header-cta { width: 100%; justify-content: center; padding: 12px; margin-top: 10px; }
+            .footer-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 480px) {
+            .cta-phone-btn { font-size: 18px; width: 100%; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Closable Disclaimer Banner -->
+    <div class="top-banner" id="topDisclaimer">
+        <i class="fa-solid fa-circle-info"></i> <span>Independent Service Notice:</span> We provide third-party setup assistance & guidance for satellite radio devices. Not affiliated with Sirius XM Holdings Inc.
+        <button class="close-disclaimer" onclick="dismissDisclaimer()" title="Close Disclaimer">&times;</button>
+    </div>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="navbar">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-radio"></i> Radio <span>Service</span>
+            </a>
+
+            <!-- Mobile Toggle -->
+            <button class="mobile-toggle" onclick="toggleMenu()" aria-label="Toggle Menu">
+                <i class="fa-solid fa-bars" id="menuIcon"></i>
+            </button>
+
+            <!-- Navigation Links -->
+            <div class="nav-container" id="navContainer">
+                <ul class="nav-links">
+                    <li><a href="radio-setup.html">Services</a></li>
+                    <li><a href="index.html#how-it-works">How It Works</a></li>
+                    <li><a href="index.html#faq">FAQ</a></li>
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="contact-us.html">Contact Us</a></li>
+                </ul>
+                <a href="tel:+14067474507" class="header-cta">
+                    <i class="fa-solid fa-phone"></i> Call: +1 (406) 747-4507
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Title Header -->
+    <section class="page-header">
+        <h1>Our Satellite Radio Assistance Services</h1>
+        <p>Comprehensive step-by-step guidance for receiver installation, Radio ID retrieval, antenna placement, and signal troubleshooting.</p>
+    </section>
+
+    <!-- Detailed Services List -->
+    <section class="services-detail">
+        
+        <!-- Service 1 -->
+        <div class="service-block">
+            <div class="service-content">
+                <h2>1. Receiver & Dock Setup Assistance</h2>
+                <p>Installing a new home or vehicle satellite radio dock can be confusing. We guide you through mounting your receiver, connecting power adapters, and routing auxiliary audio cables cleanly.</p>
+                <ul class="service-list">
+                    <li><i class="fa-solid fa-circle-check"></i> Vehicle kit & dashboard dock mounting</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Home stereo & speaker dock connectivity</li>
+                    <li><i class="fa-solid fa-circle-check"></i> FM direct adapter & Aux cable setup</li>
+                </ul>
+                <a href="tel:+14067474507" class="header-cta" style="border-radius: 8px;">
+                    <i class="fa-solid fa-headset"></i> Get Setup Walkthrough
+                </a>
+            </div>
+            <div class="service-box-card">
+                <i class="fa-solid fa-satellite-dish"></i>
+                <h3>Hardware Installation</h3>
+                <p>Clear phone instructions for all major dockable tuner models.</p>
+            </div>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="service-block">
+            <div class="service-content">
+                <h2>2. Radio ID & ESN Location Helper</h2>
+                <p>Your Radio ID (or ESN number) is required for channel activation and account lookup. If your display is showing blank screens or menu navigation errors, we help you locate it instantly.</p>
+                <ul class="service-list">
+                    <li><i class="fa-solid fa-circle-check"></i> Channel 0 (Zero) tuning guidance</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Menu system navigation for hidden ESN codes</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Physical label verification on tuner bases</li>
+                </ul>
+                <a href="tel:+14067474507" class="header-cta" style="border-radius: 8px;">
+                    <i class="fa-solid fa-phone"></i> Call for Radio ID Support
+                </a>
+            </div>
+            <div class="service-box-card">
+                <i class="fa-solid fa-id-card"></i>
+                <h3>Radio ID Lookup</h3>
+                <p>Find your 8-character identification code in seconds.</p>
+            </div>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="service-block">
+            <div class="service-content">
+                <h2>3. Signal & Antenna Troubleshooting</h2>
+                <p>Is your screen showing "Check Antenna" or "Acquiring Signal"? Signal drops usually happen due to poor antenna placement or faulty cable connections.</p>
+                <ul class="service-list">
+                    <li><i class="fa-solid fa-circle-check"></i> South-facing sky alignment instructions</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Checking SMB antenna connector tightness</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Clearing weather or physical barrier obstructions</li>
+                </ul>
+                <a href="tel:+14067474507" class="header-cta" style="border-radius: 8px;">
+                    <i class="fa-solid fa-wrench"></i> Fix Signal Issues
+                </a>
+            </div>
+            <div class="service-box-card">
+                <i class="fa-solid fa-tower-cell"></i>
+                <h3>Signal Optimization</h3>
+                <p>Eliminate audio dropouts and antenna connection warnings.</p>
+            </div>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="service-block">
+            <div class="service-content">
+                <h2>4. Package & Channel Navigation Guide</h2>
+                <p>Learn how to browse music, sports, news, and talk categories, set preset channels, and navigate online account options seamlessly.</p>
+                <ul class="service-list">
+                    <li><i class="fa-solid fa-circle-check"></i> Setting favorite channel presets</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Guidance on streaming app integration</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Understanding programming package line-ups</li>
+                </ul>
+                <a href="tel:+14067474507" class="header-cta" style="border-radius: 8px;">
+                    <i class="fa-solid fa-sliders"></i> Learn Channel Tuning
+                </a>
+            </div>
+            <div class="service-box-card">
+                <i class="fa-solid fa-list-check"></i>
+                <h3>Channel Tuning</h3>
+                <p>Max out your satellite radio experience with proper channel setup.</p>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Call To Action Banner -->
+    <section class="cta-banner">
+        <div class="cta-container">
+            <h2>Need Immediate Phone Guidance?</h2>
+            <p>Our independent support team is standing by to help you resolve your satellite radio setup queries.</p>
+            <a href="tel:+14067474507" class="cta-phone-btn">
+                <i class="fa-solid fa-phone"></i> Call +1 (406) 747-4507
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <h3>Radio Service</h3>
+                    <p>Dedicated independent setup assistance, configuration advice, and user guide services for satellite radio receiver owners nationwide.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="radio-setup.html">Receiver Setup Guide</a></li>
+                        <li><a href="radio-id-help.html">Find Radio ID / ESN</a></li>
+                        <li><a href="signal-troubleshooting.html">Signal Repair Help</a></li>
+                        <li><a href="plan-assistance.html">Plan Options Guide</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Company Info</h4>
+                    <ul>
+                        <li><a href="about-us.html">About Us</a></li>
+                        <li><a href="contact-us.html">Contact Us</a></li>
+                        <li><a href="disclaimer.html">Disclaimer</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Legal & Policy</h4>
+                    <ul>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms-and-conditions.html">Terms & Conditions</a></li>
+                        <li><a href="refund-policy.html">Refund Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Standard Exact Disclaimer Box -->
+            <div class="disclaimer-box">
+                <strong>Legal Disclaimer:</strong> All satellite radio product names, logos, brands, and trademarks displayed on this site are the property of their respective owners. Their appearance does not imply any partnership, authorization, or official affiliation with xmradioservices.com. All content on this website is the intellectual property of xmradioservices.com and/or its content providers and is protected under U.S. and international copyright laws. Any reproduction, distribution, or use of the content without prior written consent is strictly prohibited and may result in legal action. By accessing or using this website, you acknowledge and agree that xmradioservices.com is an independent third-party guidance provider and is not liable for any direct, indirect, or incidental loss arising from information, offers, or external links provided herein. For inquiries, please contact us at support@xmradioservices.com.
+            </div>
+
+            <div class="copyright">
+                &copy; 2026 xmradioservices.com. All Rights Reserved. | Independent Third-Party Support Provider.
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        function toggleMenu() {
+            const navContainer = document.getElementById('navContainer');
+            const menuIcon = document.getElementById('menuIcon');
+            
+            navContainer.classList.toggle('active');
+            
+            if (navContainer.classList.contains('active')) {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-xmark');
+            } else {
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            }
+        }
+
+        function dismissDisclaimer() {
+            const disclaimer = document.getElementById('topDisclaimer');
+            disclaimer.style.display = 'none';
+        }
+    </script>
+</body>
+</html>

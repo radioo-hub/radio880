@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Radio Service | Premier Satellite Radio Setup & Assistance</title>
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -37,20 +37,40 @@
             line-height: 1.6;
         }
 
-        /* Top Disclaimer Banner */
+        /* Top Closable Disclaimer Banner */
         .top-banner {
             background-color: var(--secondary-color);
             color: #f1f5f9;
             text-align: center;
-            padding: 10px 20px;
+            padding: 10px 40px 10px 20px;
             font-size: 13px;
             font-weight: 500;
+            position: relative;
             border-bottom: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
         }
 
         .top-banner span {
             color: var(--accent-color);
             font-weight: 600;
+        }
+
+        .close-disclaimer {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: #94a3b8;
+            font-size: 18px;
+            cursor: pointer;
+            padding: 2px 6px;
+            transition: color 0.2s;
+        }
+
+        .close-disclaimer:hover {
+            color: #ffffff;
         }
 
         /* Header / Navigation */
@@ -68,11 +88,11 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 18px 24px;
+            padding: 16px 24px;
         }
 
         .logo {
-            font-size: 26px;
+            font-size: 24px;
             font-weight: 800;
             color: var(--primary-color);
             text-decoration: none;
@@ -83,6 +103,12 @@
 
         .logo span {
             color: var(--secondary-color);
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            gap: 25px;
         }
 
         .nav-links {
@@ -107,14 +133,16 @@
         .header-cta {
             background-color: #22c55e;
             color: #ffffff !important;
-            padding: 10px 20px;
+            padding: 10px 22px;
             border-radius: 50px;
             font-weight: 600 !important;
-            display: flex;
+            display: inline-flex;
             align-items: center;
             gap: 8px;
+            text-decoration: none;
             box-shadow: 0 4px 10px rgba(34, 197, 94, 0.3);
             transition: transform 0.2s, background 0.2s !important;
+            white-space: nowrap;
         }
 
         .header-cta:hover {
@@ -122,24 +150,24 @@
             transform: translateY(-2px);
         }
 
+        /* Mobile Menu Toggle Button */
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 22px;
+            color: var(--secondary-color);
+            cursor: pointer;
+            padding: 5px;
+        }
+
         /* Hero Section */
         .hero {
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             color: #ffffff;
-            padding: 100px 24px 80px;
+            padding: 90px 24px 70px;
             position: relative;
             overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -10%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(13,110,253,0.15) 0%, transparent 70%);
-            border-radius: 50%;
         }
 
         .hero-container {
@@ -154,7 +182,7 @@
         }
 
         .hero-text h1 {
-            font-size: 44px;
+            font-size: 42px;
             line-height: 1.2;
             font-weight: 800;
             margin-bottom: 20px;
@@ -188,12 +216,6 @@
             align-items: center;
             gap: 6px;
             border: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .hero-actions {
-            display: flex;
-            gap: 15px;
-            align-items: center;
         }
 
         .btn-primary {
@@ -242,7 +264,7 @@
             margin-bottom: 20px;
         }
 
-        /* Features / Why Choose Us */
+        /* Features Section */
         .features {
             padding: 80px 24px;
             max-width: 1200px;
@@ -279,7 +301,6 @@
             border-radius: 12px;
             border: 1px solid var(--border-color);
             transition: all 0.3s ease;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
         }
 
         .feature-box:hover {
@@ -313,7 +334,7 @@
             line-height: 1.6;
         }
 
-        /* How It Works Section */
+        /* How It Works */
         .how-it-works {
             background-color: #ffffff;
             padding: 80px 24px;
@@ -331,7 +352,6 @@
 
         .step-card {
             text-align: center;
-            position: relative;
         }
 
         .step-number {
@@ -425,7 +445,6 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            cursor: pointer;
         }
 
         .faq-answer {
@@ -435,7 +454,7 @@
             line-height: 1.6;
         }
 
-        /* Footer */
+        /* Footer & Sub-Pages Interlinking */
         footer {
             background-color: #090d16;
             color: #94a3b8;
@@ -450,8 +469,8 @@
 
         .footer-grid {
             display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 40px;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 35px;
             margin-bottom: 40px;
         }
 
@@ -461,15 +480,13 @@
             margin-bottom: 15px;
         }
 
-        .footer-about p {
-            line-height: 1.7;
-            margin-bottom: 15px;
-        }
-
         .footer-links h4 {
             color: #ffffff;
             font-size: 16px;
             margin-bottom: 15px;
+            border-bottom: 2px solid var(--primary-color);
+            display: inline-block;
+            padding-bottom: 5px;
         }
 
         .footer-links ul {
@@ -488,6 +505,7 @@
 
         .footer-links a:hover {
             color: #ffffff;
+            text-decoration: underline;
         }
 
         .disclaimer-box {
@@ -507,25 +525,61 @@
             color: #64748b;
         }
 
-        /* Responsive Design */
+        /* Responsive Mobile Layout Fixes */
         @media (max-width: 992px) {
             .hero-container {
                 grid-template-columns: 1fr;
                 text-align: center;
             }
-            .hero-badges, .hero-actions {
+            .hero-badges {
                 justify-content: center;
             }
             .footer-grid {
-                grid-template-columns: 1fr;
-            }
-            .nav-links {
-                display: none; /* Can be toggled with mobile menu */
+                grid-template-columns: 1fr 1fr;
             }
         }
 
-        @media (max-width: 576px) {
+        @media (max-width: 768px) {
+            .mobile-toggle {
+                display: block;
+            }
+
+            .nav-container {
+                display: none; /* Toggled via JS in mobile */
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: #ffffff;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+                border-top: 1px solid var(--border-color);
+            }
+
+            .nav-container.active {
+                display: flex;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 15px;
+                width: 100%;
+                text-align: center;
+            }
+
+            .header-cta {
+                width: 100%;
+                justify-content: center;
+                padding: 12px;
+                margin-top: 10px;
+            }
+
             .hero-text h1 { font-size: 32px; }
+            .footer-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 480px) {
             .btn-primary { width: 100%; justify-content: center; }
             .cta-phone-btn { font-size: 18px; width: 100%; justify-content: center; }
         }
@@ -533,25 +587,37 @@
 </head>
 <body>
 
-    <!-- Top Disclaimer Banner -->
-    <div class="top-banner">
+    <!-- Top Closable Disclaimer Banner -->
+    <div class="top-banner" id="topDisclaimer">
         <i class="fa-solid fa-triangle-exclamation"></i> <span>Independent Service Notice:</span> We provide third-party setup assistance & guide for satellite radio devices. Not affiliated with Sirius XM Holdings Inc.
+        <button class="close-disclaimer" onclick="dismissDisclaimer()" title="Close Disclaimer">&times;</button>
     </div>
 
     <!-- Header Navigation -->
     <header>
         <div class="navbar">
-            <a href="#" class="logo">
+            <a href="index.html" class="logo">
                 <i class="fa-solid fa-radio"></i> Radio <span>Service</span>
             </a>
-            <ul class="nav-links">
-                <li><a href="#services">Our Services</a></li>
-                <li><a href="#how-it-works">How It Works</a></li>
-                <li><a href="#faq">FAQ</a></li>
-            </ul>
-            <a href="tel:18000000000" class="header-cta">
-                <i class="fa-solid fa-phone"></i> Call: 1-800-XXX-XXXX
-            </a>
+
+            <!-- Mobile Hamburger Toggle -->
+            <button class="mobile-toggle" onclick="toggleMenu()" aria-label="Toggle Menu">
+                <i class="fa-solid fa-bars" id="menuIcon"></i>
+            </button>
+
+            <!-- Navigation Links & Call CTA -->
+            <div class="nav-container" id="navContainer">
+                <ul class="nav-links">
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#how-it-works">How It Works</a></li>
+                    <li><a href="index.html#faq">FAQ</a></li>
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="contact-us.html">Contact Us</a></li>
+                </ul>
+                <a href="tel:18000000000" class="header-cta">
+                    <i class="fa-solid fa-phone"></i> Call: 1-800-XXX-XXXX
+                </a>
+            </div>
         </div>
     </header>
 
@@ -565,7 +631,7 @@
                 </div>
                 <h1>Comprehensive <span>Satellite Radio</span> Setup & Plan Guide</h1>
                 <p>Facing trouble activating your receiver, finding your Radio ID, or setting up home/car dock kits? Our experts provide instant step-by-step guidance over the phone.</p>
-                <div class="hero-actions">
+                <div>
                     <a href="tel:18000000000" class="btn-primary">
                         <i class="fa-solid fa-headset"></i> Get Setup Guidance Now
                     </a>
@@ -575,14 +641,14 @@
                 <i class="fa-solid fa-circle-play"></i>
                 <h3>Need Immediate Help?</h3>
                 <p>Speak directly with an independent radio support guide to resolve your antenna, setup, or account navigation queries.</p>
-                <a href="tel:18000000000" style="color: var(--accent-color); font-weight: 700; text-decoration: none; font-size: 18px;">
+                <a href="tel:18000000000" style="color: var(--accent-color); font-weight: 700; text-decoration: none; font-size: 20px;">
                     <i class="fa-solid fa-phone-volume"></i> 1-800-XXX-XXXX
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Services / Features Section -->
+    <!-- Services Section -->
     <section class="features" id="services">
         <div class="section-header">
             <h2>How We Assist Satellite Radio Users</h2>
@@ -682,7 +748,7 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer with Interlinked Sub-Pages -->
     <footer>
         <div class="footer-container">
             <div class="footer-grid">
@@ -690,23 +756,40 @@
                     <h3>Radio Service</h3>
                     <p>Dedicated independent setup assistance, configuration advice, and user guide services for satellite radio receiver owners nationwide.</p>
                 </div>
+                
+                <!-- Sub-Page Interlinks Column 1: Services -->
                 <div class="footer-links">
-                    <h4>Quick Links</h4>
+                    <h4>Our Services</h4>
                     <ul>
-                        <li><a href="#services">Our Services</a></li>
-                        <li><a href="#how-it-works">Setup Guide</a></li>
-                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="radio-setup.html">Receiver Setup Guide</a></li>
+                        <li><a href="radio-id-help.html">Find Radio ID / ESN</a></li>
+                        <li><a href="signal-troubleshooting.html">Signal Repair Help</a></li>
+                        <li><a href="plan-assistance.html">Plan Options Guide</a></li>
                     </ul>
                 </div>
+
+                <!-- Sub-Page Interlinks Column 2: Company -->
                 <div class="footer-links">
-                    <h4>Contact Support</h4>
+                    <h4>Company Info</h4>
                     <ul>
-                        <li><i class="fa-solid fa-phone"></i> 1-800-XXX-XXXX</li>
-                        <li><i class="fa-solid fa-clock"></i> Hours: Mon-Sun (Support)</li>
+                        <li><a href="about-us.html">About Us</a></li>
+                        <li><a href="contact-us.html">Contact Us</a></li>
+                        <li><a href="disclaimer.html">Disclaimer</a></li>
+                    </ul>
+                </div>
+
+                <!-- Sub-Page Interlinks Column 3: Legal & Policy -->
+                <div class="footer-links">
+                    <h4>Legal & Policy</h4>
+                    <ul>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms-and-conditions.html">Terms & Conditions</a></li>
+                        <li><a href="refund-policy.html">Refund Policy</a></li>
                     </ul>
                 </div>
             </div>
 
+            <!-- Legal Disclaimer Box -->
             <div class="disclaimer-box">
                 <strong>Legal Disclaimer:</strong> Radio Service is an independent third-party entity offering non-affiliated guidance, setup assistance, and informational resources for satellite radio users. All third-party product names, logos, brands, and registered trademarks (including SiriusXM, XM, and related marks) are property of their respective owners. Their mention on this website is solely for identification and descriptive purposes and does not imply any endorsement or affiliation.
             </div>
@@ -717,5 +800,29 @@
         </div>
     </footer>
 
+    <!-- Open-Source JavaScript for Responsive Toggle & Disclaimer Close -->
+    <script>
+        // Toggle Mobile Menu
+        function toggleMenu() {
+            const navContainer = document.getElementById('navContainer');
+            const menuIcon = document.getElementById('menuIcon');
+            
+            navContainer.classList.toggle('active');
+            
+            if (navContainer.classList.contains('active')) {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-xmark');
+            } else {
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            }
+        }
+
+        // Close Top Disclaimer Banner
+        function dismissDisclaimer() {
+            const disclaimer = document.getElementById('topDisclaimer');
+            disclaimer.style.display = 'none';
+        }
+    </script>
 </body>
 </html>

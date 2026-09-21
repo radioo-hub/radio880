@@ -1,223 +1,533 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="robots" content="noindex, nofollow" />
-    <title>Disclaimer | XM Radio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disclaimer | xmradioservices.com - Independent Third-Party Support</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: system-ui, -apple-system, sans-serif; }
-        .bg-primary { background: #0a2a5c; }
-        .text-primary { color: #0a2a5c; }
-        .bg-accent { background: #f5a623; }
-        .bg-accent:hover { background: #d98e1a; }
-        .text-accent { color: #f5a623; }
-        .mobile-menu { display: none; }
-        .mobile-menu.open { display: block; }
-        @media (max-width: 768px) {
-            .desktop-nav { display: none; }
-            .mobile-toggle { display: block; }
-            .desktop-phone { display: none; }
+        :root {
+            --primary-blue: #0d6efd;
+            --dark-blue: #0a2540;
+            --light-blue-bg: #f4f7fa;
+            --hover-blue: #0b5ed7;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+            --shadow: 0 10px 20px rgba(13, 110, 253, 0.08);
         }
-        @media (min-width: 769px) {
-            .mobile-toggle { display: none; }
-            .desktop-nav { display: flex; }
-            .desktop-phone { display: flex; }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
         }
-        .footer-grid { grid-template-columns: 1fr 1fr 1fr 1fr; }
-        @media (max-width: 768px) {
+
+        body {
+            background-color: #ffffff;
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* Top Closable Disclaimer Banner */
+        .top-banner {
+            background-color: var(--dark-blue);
+            color: #ffffff;
+            text-align: center;
+            padding: 10px 40px 10px 20px;
+            font-size: 13px;
+            font-weight: 500;
+            position: relative;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .top-banner span {
+            color: #60a5fa;
+            font-weight: 600;
+        }
+
+        .close-disclaimer {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: #94a3b8;
+            font-size: 18px;
+            cursor: pointer;
+            padding: 2px 6px;
+            transition: color 0.2s;
+        }
+
+        .close-disclaimer:hover {
+            color: #ffffff;
+        }
+
+        /* Header Navigation */
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 24px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary-blue);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--dark-blue);
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-blue);
+            font-weight: 500;
+            font-size: 15px;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-blue);
+        }
+
+        .header-cta {
+            background-color: var(--primary-blue);
+            color: #ffffff !important;
+            padding: 10px 22px;
+            border-radius: 50px;
+            font-weight: 600 !important;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(13, 110, 253, 0.25);
+            transition: background 0.2s, transform 0.2s !important;
+            white-space: nowrap;
+        }
+
+        .header-cta:hover {
+            background-color: var(--hover-blue) !important;
+            transform: translateY(-2px);
+        }
+
+        /* Mobile Toggle */
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 22px;
+            color: var(--dark-blue);
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        /* Inner Page Header Banner */
+        .page-header {
+            background: linear-gradient(135deg, #0a2540 0%, #113a63 100%);
+            color: #ffffff;
+            padding: 60px 24px;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 38px;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .page-header p {
+            color: #93c5fd;
+            font-size: 18px;
+            max-width: 750px;
+            margin: 0 auto;
+        }
+
+        /* Page Content Section */
+        .content-section {
+            padding: 70px 24px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .disclaimer-card {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+            margin-bottom: 40px;
+        }
+
+        .disclaimer-card h2 {
+            font-size: 22px;
+            color: var(--dark-blue);
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-weight: 700;
+            border-bottom: 2px solid var(--light-blue-bg);
+            padding-bottom: 8px;
+        }
+
+        .disclaimer-card h2:first-of-type {
+            margin-top: 0;
+        }
+
+        .disclaimer-card p {
+            color: #334155;
+            font-size: 15px;
+            line-height: 1.8;
+            margin-bottom: 18px;
+        }
+
+        .disclaimer-card ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+            color: #334155;
+        }
+
+        .disclaimer-card li {
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+
+        /* Call To Action Banner */
+        .cta-banner {
+            background: linear-gradient(135deg, var(--dark-blue) 0%, var(--primary-blue) 100%);
+            color: #ffffff;
+            padding: 60px 24px;
+            text-align: center;
+        }
+
+        .cta-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-container h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        .cta-container p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #93c5fd;
+        }
+
+        .cta-phone-btn {
+            background-color: #ffffff;
+            color: var(--dark-blue);
+            padding: 16px 36px;
+            font-size: 22px;
+            font-weight: 800;
+            border-radius: 50px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .cta-phone-btn:hover {
+            transform: scale(1.03);
+            background-color: #f8fafc;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-blue);
+            color: #94a3b8;
+            padding: 60px 24px 30px;
+            font-size: 13px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 35px;
+            margin-bottom: 40px;
+        }
+
+        .footer-about h3 {
+            color: #ffffff;
+            font-size: 20px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .footer-links h4 {
+            color: #ffffff;
+            font-size: 16px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--primary-blue);
+            display: inline-block;
+            padding-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        .disclaimer-box {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            padding: 20px;
+            border-radius: 8px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            color: #cbd5e1;
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            padding-top: 25px;
+            color: #64748b;
+        }
+
+        /* Responsive Layout Fixes */
+        @media (max-width: 992px) {
             .footer-grid { grid-template-columns: 1fr 1fr; }
         }
-        @media (max-width: 480px) {
+
+        @media (max-width: 768px) {
+            .mobile-toggle { display: block; }
+            .nav-container {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: #ffffff;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+                border-top: 1px solid var(--border-color);
+            }
+            .nav-container.active { display: flex; }
+            .nav-links { flex-direction: column; gap: 15px; width: 100%; text-align: center; }
+            .header-cta { width: 100%; justify-content: center; padding: 12px; margin-top: 10px; }
             .footer-grid { grid-template-columns: 1fr; }
+            .disclaimer-card { padding: 25px; }
         }
-        .terms-content h2 { color: #0a2a5c; font-size: 1.5rem; font-weight: 700; margin-top: 2rem; margin-bottom: 0.75rem; }
-        .terms-content h2:first-of-type { margin-top: 0; }
-        .terms-content p { color: #4b5563; line-height: 1.8; margin-bottom: 0.75rem; }
-        .terms-content ul { list-style: disc; padding-left: 1.5rem; color: #4b5563; line-height: 1.8; margin-bottom: 1rem; }
-        .terms-content ul li { margin-bottom: 0.25rem; }
-        .terms-card { background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border: 1px solid #e5e7eb; }
-        .back-home-btn { display: inline-flex; align-items: center; gap: 0.5rem; color: #0a2a5c; font-weight: 600; transition: color 0.3s; }
-        .back-home-btn:hover { color: #f5a623; }
-        .back-home-btn svg { width: 20px; height: 20px; }
-        .critical-box { background: #fef2f2; border-left: 6px solid #dc2626; padding: 1rem 1.5rem; border-radius: 6px; margin: 0.5rem 0 1.5rem 0; }
-        .critical-box p { color: #991b1b; font-weight: 600; margin-bottom: 0; font-size: 1.1rem; }
-        .official-box { background: #f0fdf4; border-left: 4px solid #22c55e; padding: 1rem 1.5rem; border-radius: 4px; margin: 1rem 0; }
-        .official-box p { margin-bottom: 0.25rem; }
-        .official-box a { color: #f5a623; font-weight: 600; text-decoration: none; }
-        .official-box a:hover { text-decoration: underline; }
-        .acknowledge-box { background: #0a2a5c; color: white; padding: 1rem 1.5rem; border-radius: 8px; margin-top: 1.5rem; text-align: center; }
-        .acknowledge-box p { color: white; margin-bottom: 0; font-weight: 500; }
+
+        @media (max-width: 480px) {
+            .cta-phone-btn { font-size: 18px; width: 100%; justify-content: center; }
+        }
     </style>
 </head>
 <body>
 
-    <!-- HEADER -->
-    <header class="bg-primary text-white sticky top-0 z-50 shadow-lg">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <a href="index.html" class="flex items-center gap-2 font-bold text-2xl hover:opacity-90 transition">
-                    <div class="w-10 h-10 bg-accent rounded-lg flex items-center justify-center font-bold text-lg text-primary">XM</div>
-                    <span class="hidden sm:inline">XM Radio</span>
+    <!-- Top Closable Disclaimer Banner -->
+    <div class="top-banner" id="topDisclaimer">
+        <i class="fa-solid fa-circle-info"></i> <span>Independent Service Notice:</span> We provide third-party setup assistance & guidance for satellite radio devices. Not affiliated with Sirius XM Holdings Inc.
+        <button class="close-disclaimer" onclick="dismissDisclaimer()" title="Close Disclaimer">&times;</button>
+    </div>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="navbar">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-radio"></i> Radio <span>Service</span>
+            </a>
+
+            <!-- Mobile Toggle -->
+            <button class="mobile-toggle" onclick="toggleMenu()" aria-label="Toggle Menu">
+                <i class="fa-solid fa-bars" id="menuIcon"></i>
+            </button>
+
+            <!-- Navigation Links -->
+            <div class="nav-container" id="navContainer">
+                <ul class="nav-links">
+                    <li><a href="radio-setup.html">Services</a></li>
+                    <li><a href="index.html#how-it-works">How It Works</a></li>
+                    <li><a href="index.html#faq">FAQ</a></li>
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="contact-us.html">Contact Us</a></li>
+                </ul>
+                <a href="tel:+14067474507" class="header-cta">
+                    <i class="fa-solid fa-phone"></i> Call: +1 (406) 747-4507
                 </a>
-                <nav class="desktop-nav items-center gap-8 text-sm font-medium">
-                    <a href="index.html#how-it-works" class="hover:text-accent transition">How It Works</a>
-                    <a href="index.html#features" class="hover:text-accent transition">Features</a>
-                    <a href="index.html#faq" class="hover:text-accent transition">FAQs</a>
-                    <a href="contact.html" class="text-accent hover:opacity-80 transition">Contact</a>
-                </nav>
-                <a href="tel:+14067474507" class="desktop-phone items-center gap-2 bg-accent text-primary px-4 py-2 rounded-lg font-semibold text-sm hover:bg-opacity-90 transition">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-                    +1 (406) 747-4507
-                </a>
-                <button class="mobile-toggle p-2 hover:bg-white/20 rounded-lg transition" onclick="toggleMobileMenu()">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
-                </button>
-            </div>
-            <div id="mobileMenu" class="mobile-menu pb-4">
-                <a href="index.html#how-it-works" class="block py-2 hover:text-accent transition">How It Works</a>
-                <a href="index.html#features" class="block py-2 hover:text-accent transition">Features</a>
-                <a href="index.html#faq" class="block py-2 hover:text-accent transition">FAQs</a>
-                <a href="contact.html" class="block py-2 text-accent hover:opacity-80 transition">Contact</a>
-                <a href="tel:+14067474507" class="block mt-2 bg-accent text-primary px-4 py-2 rounded-lg font-semibold text-center">📞 +1 (406) 747-4507</a>
             </div>
         </div>
     </header>
 
-    <!-- DISCLAIMER CONTENT -->
-    <section class="py-16 bg-gray-50">
-        <div class="max-w-4xl mx-auto px-6">
-            <a href="index.html" class="back-home-btn mb-6 inline-block">
-                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
-                ← Back to Home
+    <!-- Page Title Header -->
+    <section class="page-header">
+        <h1>Website Legal Disclaimer</h1>
+        <p>Important legal notice regarding independent service status, brand trademarks, and informational liability.</p>
+    </section>
+
+    <!-- Main Content Section -->
+    <section class="content-section">
+
+        <div class="disclaimer-card">
+            <h2>1. Independent Third-Party Status</h2>
+            <p><strong>xmradioservices.com</strong> is an independent third-party provider offering technical setup guidance, troubleshooting advice, and device configuration support for satellite radio receiver owners. We are not affiliated with, sponsored by, authorized by, or associated with Sirius XM Holdings Inc. or any of its official brand subsidiaries.</p>
+
+            <h2>2. Trademark Notice</h2>
+            <p>All trademarks, service marks, trade names, product names, and company logos appearing on this website belong to their respective owners. Any reference to specific third-party products, services, or trade names is made solely for descriptive, educational, and identification purposes and does not imply endorsement or partnership.</p>
+
+            <h2>3. Accuracy of Information</h2>
+            <p>While we attempt to ensure that all setup instructions, technical guides, and information provided on this website are accurate and up-to-date, xmradioservices.com makes no warranties or representations, express or implied, regarding the completeness or accuracy of any content. Users are advised to verify hardware settings directly with their respective receiver equipment manufacturers.</p>
+
+            <h2>4. Limitation of Liability</h2>
+            <p>Under no circumstances shall xmradioservices.com, its operators, or support staff be held liable for any direct, indirect, incidental, or consequential damages resulting from the use of, or inability to use, the information or support provided through this site. Technical procedures are attempted at the user's own risk.</p>
+
+            <h2>5. External Links Disclaimer</h2>
+            <p>Our website may contain links to external third-party websites. xmradioservices.com does not guarantee, control, or take responsibility for the privacy practices or content found on external third-party sites.</p>
+
+            <h2>6. Contact For Legal Questions</h2>
+            <p>If you have any questions or concerns regarding this Legal Disclaimer, please contact our administrative team at:</p>
+            <ul>
+                <li><strong>Email:</strong> support@xmradioservices.com</li>
+                <li><strong>Phone:</strong> +1 (406) 747-4507</li>
+            </ul>
+        </div>
+
+    </section>
+
+    <!-- Call To Action Banner -->
+    <section class="cta-banner">
+        <div class="cta-container">
+            <h2>Have Questions About Our Services?</h2>
+            <p>Connect with our phone support team for immediate setup guidance.</p>
+            <a href="tel:+14067474507" class="cta-phone-btn">
+                <i class="fa-solid fa-phone"></i> Call +1 (406) 747-4507
             </a>
-            <div class="terms-card">
-                <h1 class="text-3xl md:text-4xl font-bold text-primary mb-2">Important Disclaimer</h1>
-                <p class="text-sm text-gray-500 mb-6">Last Updated: 2/14/2026</p>
-                <div class="critical-box">
-                    <p>⚠️ CRITICAL: Please read this disclaimer carefully before using our services.</p>
-                </div>
-                <div class="terms-content">
-                    <h2>1. No Affiliation with Sirius XM</h2>
-                    <p>XM Radio Services is NOT affiliated with, endorsed by, or connected to Sirius XM Inc., Liberty Media Corporation, or any of their parent or subsidiary companies. We operate as an independent third-party service provider.</p>
-                    <p>Sirius XM® is a registered trademark of Sirius XM Holdings Inc. We use this trademark only for descriptive purposes to identify the service we support.</p>
-                    <h2>2. Services Provided</h2>
-                    <p>We provide independent activation assistance and setup guidance only. We do NOT:</p>
-                    <ul>
-                        <li>Process subscription payments</li>
-                        <li>Manage Sirius XM accounts</li>
-                        <li>Guarantee successful activation</li>
-                        <li>Represent Sirius XM or speak on their behalf</li>
-                        <li>Provide official customer support from Sirius XM</li>
-                    </ul>
-                    <h2>3. No Warranty or Guarantee</h2>
-                    <p>Our services are provided on an <strong>"AS-IS"</strong> basis. We make NO warranties or guarantees that:</p>
-                    <ul>
-                        <li>Your activation will be successful</li>
-                        <li>Your service will function properly</li>
-                        <li>Your subscription will continue uninterrupted</li>
-                        <li>We can resolve all issues</li>
-                    </ul>
-                    <h2>4. Limitation of Liability</h2>
-                    <p>To the fullest extent permitted by law, XM Radio Services shall not be liable for any:</p>
-                    <ul>
-                        <li>Indirect, incidental, or consequential damages</li>
-                        <li>Loss of data, profits, or revenue</li>
-                        <li>Service interruptions or failures</li>
-                        <li>Third-party claims</li>
-                        <li>Any damages arising from your use of our services</li>
-                    </ul>
-                    <h2>5. User Responsibility</h2>
-                    <p>You are responsible for:</p>
-                    <ul>
-                        <li>Providing accurate information about your radio</li>
-                        <li>Following all guidance from our team</li>
-                        <li>Maintaining your subscription with Sirius XM directly</li>
-                        <li>Compliance with all Sirius XM terms and conditions</li>
-                    </ul>
-                    <h2>6. Official Sirius XM Support</h2>
-                    <div class="official-box">
-                        <p>For official Sirius XM customer support, please contact Sirius XM directly:</p>
-                        <p><strong>📞 Phone:</strong> <a href="tel:+18885397474">1-888-539-7474</a></p>
-                        <p><strong>🌐 Website:</strong> <a href="https://www.sirius.com" target="_blank">www.sirius.com</a></p>
-                        <p><strong>🕐 Hours:</strong> Available 24/7</p>
-                    </div>
-                    <h2>7. Changes to Disclaimer</h2>
-                    <p>We reserve the right to modify this disclaimer at any time. Please review it regularly for changes.</p>
-                    <h2>8. Contact for Questions</h2>
-                    <p>If you have questions about this disclaimer, please contact us at <a href="tel:+14067474507" class="text-accent font-semibold hover:underline">+1 (406) 747-4507</a></p>
-                    <div class="acknowledge-box">
-                        <p>✅ By using our services, you acknowledge that you have read and understand this disclaimer.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="mt-8 text-center">
-                <a href="index.html" class="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-opacity-90 transition">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
-                    ← Back to Home
-                </a>
-            </div>
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="bg-gray-900 text-gray-100">
-        <div class="max-w-6xl mx-auto px-6 py-12">
-            <div class="footer-grid gap-8 mb-8">
-                <div>
-                    <h3 class="text-lg font-bold text-white mb-4">XM Radio Services</h3>
-                    <p class="text-sm text-gray-400 mb-4">Professional satellite radio activation and setup services.</p>
-                    <p class="text-sm text-gray-400"><strong>📍 Address:</strong> 868 Aztec Dr, Martinsburg, WV 25405</p>
-                    <p class="text-sm text-gray-400"><strong>📞 Call:</strong> <a href="tel:+14067474507" class="text-accent hover:underline">+1 (406) 747-4507</a></p>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <h3>Radio Service</h3>
+                    <p>Dedicated independent setup assistance, configuration advice, and user guide services for satellite radio receiver owners nationwide.</p>
                 </div>
-                <div>
-                    <h4 class="text-sm font-bold text-white mb-4">Quick Links</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="index.html" class="hover:text-accent transition">Home</a></li>
-                        <li><a href="index.html#features" class="hover:text-accent transition">Features</a></li>
-                        <li><a href="index.html#how-it-works" class="hover:text-accent transition">How It Works</a></li>
-                        <li><a href="index.html#faq" class="hover:text-accent transition">FAQs</a></li>
-                        <li><a href="contact.html" class="text-accent hover:underline transition">Contact</a></li>
+                
+                <div class="footer-links">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="radio-setup.html">Receiver Setup Guide</a></li>
+                        <li><a href="radio-id-help.html">Find Radio ID / ESN</a></li>
+                        <li><a href="signal-troubleshooting.html">Signal Repair Help</a></li>
+                        <li><a href="plan-assistance.html">Plan Options Guide</a></li>
                     </ul>
                 </div>
-                <div>
-                    <h4 class="text-sm font-bold text-white mb-4">Legal</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="terms.html" class="hover:text-accent transition">Terms of Service</a></li>
-                        <li><a href="privacy.html" class="hover:text-accent transition">Privacy Policy</a></li>
-                        <li><a href="cookies.html" class="hover:text-accent transition">Cookie Policy</a></li>
-                        <li><a href="dmca.html" class="hover:text-accent transition">DMCA &amp; Copyright</a></li>
-                        <li><a href="disclaimer.html" class="text-accent hover:underline transition">Disclaimer</a></li>
-                        <li><a href="ads-disclosure.html" class="hover:text-accent transition">Ads Disclosure</a></li>
+
+                <div class="footer-links">
+                    <h4>Company Info</h4>
+                    <ul>
+                        <li><a href="about-us.html">About Us</a></li>
+                        <li><a href="contact-us.html">Contact Us</a></li>
+                        <li><a href="disclaimer.html">Disclaimer</a></li>
                     </ul>
                 </div>
-                <div>
-                    <h4 class="text-sm font-bold text-white mb-4">Support</h4>
-                    <p class="text-sm text-gray-400 mb-2">Available 24/7</p>
-                    <p class="text-sm text-gray-400 mb-4">Our expert team is ready to help with activation and setup.</p>
-                    <a href="tel:+14067474507" class="inline-block bg-accent text-primary font-bold py-2 px-4 rounded text-sm hover:bg-opacity-90 transition">Call Us</a>
+
+                <div class="footer-links">
+                    <h4>Legal & Policy</h4>
+                    <ul>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms-and-conditions.html">Terms & Conditions</a></li>
+                        <li><a href="refund-policy.html">Refund Policy</a></li>
+                    </ul>
                 </div>
             </div>
-            <div class="border-t border-gray-800 my-8"></div>
-            <div class="flex flex-col md:flex-row items-center justify-between gap-4">
-                <p class="text-sm text-gray-400">© 2026 XM Radio. All rights reserved.</p>
-                <p class="text-xs text-gray-500 max-w-md text-center md:text-right"><strong>Disclaimer:</strong> XM Radio is a third-party service provider and is not affiliated with, endorsed by, or connected to Sirius XM Inc.</p>
+
+            <!-- Standard Exact Disclaimer Box -->
+            <div class="disclaimer-box">
+                <strong>Legal Disclaimer:</strong> All satellite radio product names, logos, brands, and trademarks displayed on this site are the property of their respective owners. Their appearance does not imply any partnership, authorization, or official affiliation with xmradioservices.com. All content on this website is the intellectual property of xmradioservices.com and/or its content providers and is protected under U.S. and international copyright laws. Any reproduction, distribution, or use of the content without prior written consent is strictly prohibited and may result in legal action. By accessing or using this website, you acknowledge and agree that xmradioservices.com is an independent third-party guidance provider and is not liable for any direct, indirect, or incidental loss arising from information, offers, or external links provided herein. For inquiries, please contact us at support@xmradioservices.com.
+            </div>
+
+            <div class="copyright">
+                &copy; 2026 xmradioservices.com. All Rights Reserved. | Independent Third-Party Support Provider.
             </div>
         </div>
     </footer>
 
+    <!-- JavaScript -->
     <script>
-        function toggleMobileMenu() {
-            document.getElementById('mobileMenu').classList.toggle('open');
+        function toggleMenu() {
+            const navContainer = document.getElementById('navContainer');
+            const menuIcon = document.getElementById('menuIcon');
+            
+            navContainer.classList.toggle('active');
+            
+            if (navContainer.classList.contains('active')) {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-xmark');
+            } else {
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            }
         }
-        document.querySelectorAll('#mobileMenu a').forEach(link => {
-            link.addEventListener('click', () => {
-                document.getElementById('mobileMenu').classList.remove('open');
-            });
-        });
-    </script>
 
+        function dismissDisclaimer() {
+            const disclaimer = document.getElementById('topDisclaimer');
+            disclaimer.style.display = 'none';
+        }
+    </script>
 </body>
 </html>

@@ -449,6 +449,84 @@
             background-color: #f8fafc;
         }
 
+        /* MSME Verification Section */
+        .msme-section {
+            padding: 60px 24px;
+            background-color: #ffffff;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .msme-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #f8fafc 0%, #edf2f7 100%);
+            border: 2px dashed #cbd5e1;
+            border-radius: 16px;
+            padding: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+        }
+
+        .msme-info {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .msme-icon {
+            font-size: 45px;
+            color: var(--primary-blue);
+            background: #ffffff;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+            flex-shrink: 0;
+        }
+
+        .msme-text h3 {
+            font-size: 22px;
+            color: var(--dark-blue);
+            margin-bottom: 6px;
+            font-weight: 700;
+        }
+
+        .msme-text p {
+            color: var(--text-muted);
+            font-size: 15px;
+        }
+
+        .msme-text p strong {
+            color: var(--text-main);
+        }
+
+        .btn-download-msme {
+            background-color: #16a34a;
+            color: #ffffff;
+            padding: 14px 28px;
+            font-size: 16px;
+            font-weight: 700;
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            white-space: nowrap;
+            transition: background-color 0.2s, transform 0.2s;
+            box-shadow: 0 4px 12px rgba(22, 163, 74, 0.25);
+        }
+
+        .btn-download-msme:hover {
+            background-color: #15803d;
+            transform: translateY(-2px);
+        }
+
         /* FAQ Section */
         .faq-section {
             padding: 80px 24px;
@@ -566,6 +644,13 @@
             .footer-grid {
                 grid-template-columns: 1fr 1fr;
             }
+            .msme-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .msme-info {
+                flex-direction: column;
+            }
         }
 
         @media (max-width: 768px) {
@@ -611,6 +696,7 @@
         @media (max-width: 480px) {
             .btn-primary { width: 100%; justify-content: center; }
             .cta-phone-btn { font-size: 18px; width: 100%; justify-content: center; }
+            .btn-download-msme { width: 100%; justify-content: center; }
         }
     </style>
 </head>
@@ -748,6 +834,28 @@
         </div>
     </section>
 
+    <!-- MSME Certificate & Verification Section -->
+    <section class="msme-section">
+        <div class="msme-container">
+            <div class="msme-info">
+                <div class="msme-icon">
+                    <i class="fa-solid fa-file-contract"></i>
+                </div>
+                <div class="msme-text">
+                    <h3>Verified Business Registration</h3>
+                    <p>Proprietor / Ownership Name: <strong>Adarsh Anand</strong></p>
+                    <p>Registered Micro, Small & Medium Enterprise (MSME).</p>
+                </div>
+            </div>
+            <div>
+                <!-- Put your PDF file name as 'msme-certificate.pdf' in your hosting root directory -->
+                <a href="msme-certificate.pdf" download="MSME_Certificate_Adarsh_Anand.pdf" class="btn-download-msme">
+                    <i class="fa-solid fa-file-pdf"></i> Download MSME Certificate
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- FAQ Section -->
     <section class="faq-section" id="faq">
         <div class="section-header">
@@ -784,6 +892,7 @@
                 <div class="footer-about">
                     <h3>Radio Service</h3>
                     <p>Dedicated independent setup assistance, configuration advice, and user guide services for satellite radio receiver owners nationwide.</p>
+                    <p style="margin-top: 10px; color: #cbd5e1; font-weight: 500;">Owned & Operated by: Adarsh Anand</p>
                 </div>
                 
                 <div class="footer-links">
@@ -821,7 +930,7 @@
             </div>
 
             <div class="copyright">
-                &copy; 2026 xmradioservices.com. All Rights Reserved. | Independent Third-Party Support Provider.
+                &copy; 2026 xmradioservices.com. All Rights Reserved. | Owned by Adarsh Anand | Independent Third-Party Support Provider.
             </div>
         </div>
     </footer>

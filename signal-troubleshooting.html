@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Satellite Radio Signal Troubleshooting Guide | xmradioservices.com</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-blue: #0d6efd;
+            --dark-blue: #0a2540;
+            --light-blue-bg: #f4f7fa;
+            --hover-blue: #0b5ed7;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+            --shadow: 0 10px 20px rgba(13, 110, 253, 0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* Top Closable Disclaimer Banner */
+        .top-banner {
+            background-color: var(--dark-blue);
+            color: #ffffff;
+            text-align: center;
+            padding: 10px 40px 10px 20px;
+            font-size: 13px;
+            font-weight: 500;
+            position: relative;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .top-banner span {
+            color: #60a5fa;
+            font-weight: 600;
+        }
+
+        .close-disclaimer {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: #94a3b8;
+            font-size: 18px;
+            cursor: pointer;
+            padding: 2px 6px;
+            transition: color 0.2s;
+        }
+
+        .close-disclaimer:hover {
+            color: #ffffff;
+        }
+
+        /* Header Navigation */
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 24px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary-blue);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--dark-blue);
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-blue);
+            font-weight: 500;
+            font-size: 15px;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-blue);
+        }
+
+        .header-cta {
+            background-color: var(--primary-blue);
+            color: #ffffff !important;
+            padding: 10px 22px;
+            border-radius: 50px;
+            font-weight: 600 !important;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(13, 110, 253, 0.25);
+            transition: background 0.2s, transform 0.2s !important;
+            white-space: nowrap;
+        }
+
+        .header-cta:hover {
+            background-color: var(--hover-blue) !important;
+            transform: translateY(-2px);
+        }
+
+        /* Mobile Toggle */
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 22px;
+            color: var(--dark-blue);
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        /* Inner Page Header Banner */
+        .page-header {
+            background: linear-gradient(135deg, #0a2540 0%, #113a63 100%);
+            color: #ffffff;
+            padding: 60px 24px;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 38px;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .page-header p {
+            color: #93c5fd;
+            font-size: 18px;
+            max-width: 750px;
+            margin: 0 auto;
+        }
+
+        /* Page Content Section */
+        .content-section {
+            padding: 70px 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .issues-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .issue-card {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .issue-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-blue);
+            box-shadow: var(--shadow);
+        }
+
+        .issue-badge {
+            display: inline-block;
+            background: rgba(13, 110, 253, 0.1);
+            color: var(--primary-blue);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .issue-card h3 {
+            font-size: 20px;
+            color: var(--dark-blue);
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .issue-card p {
+            color: var(--text-muted);
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .solutions-list {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .solutions-list li {
+            font-size: 14px;
+            color: var(--text-main);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .solutions-list li i {
+            color: var(--primary-blue);
+            margin-top: 3px;
+        }
+
+        /* Assistance Callout */
+        .help-callout {
+            background: #ffffff;
+            border: 2px dashed var(--primary-blue);
+            border-radius: 12px;
+            padding: 35px;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .help-callout h3 {
+            font-size: 24px;
+            color: var(--dark-blue);
+            margin-bottom: 10px;
+        }
+
+        .help-callout p {
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Call To Action Banner */
+        .cta-banner {
+            background: linear-gradient(135deg, var(--dark-blue) 0%, var(--primary-blue) 100%);
+            color: #ffffff;
+            padding: 60px 24px;
+            text-align: center;
+        }
+
+        .cta-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-container h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        .cta-container p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #93c5fd;
+        }
+
+        .cta-phone-btn {
+            background-color: #ffffff;
+            color: var(--dark-blue);
+            padding: 16px 36px;
+            font-size: 22px;
+            font-weight: 800;
+            border-radius: 50px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .cta-phone-btn:hover {
+            transform: scale(1.03);
+            background-color: #f8fafc;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-blue);
+            color: #94a3b8;
+            padding: 60px 24px 30px;
+            font-size: 13px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 35px;
+            margin-bottom: 40px;
+        }
+
+        .footer-about h3 {
+            color: #ffffff;
+            font-size: 20px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .footer-links h4 {
+            color: #ffffff;
+            font-size: 16px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--primary-blue);
+            display: inline-block;
+            padding-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        .disclaimer-box {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            padding: 20px;
+            border-radius: 8px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            color: #cbd5e1;
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            padding-top: 25px;
+            color: #64748b;
+        }
+
+        /* Responsive Layout Fixes */
+        @media (max-width: 992px) {
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-toggle { display: block; }
+            .nav-container {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: #ffffff;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+                border-top: 1px solid var(--border-color);
+            }
+            .nav-container.active { display: flex; }
+            .nav-links { flex-direction: column; gap: 15px; width: 100%; text-align: center; }
+            .header-cta { width: 100%; justify-content: center; padding: 12px; margin-top: 10px; }
+            .footer-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 480px) {
+            .cta-phone-btn { font-size: 18px; width: 100%; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Closable Disclaimer Banner -->
+    <div class="top-banner" id="topDisclaimer">
+        <i class="fa-solid fa-circle-info"></i> <span>Independent Service Notice:</span> We provide third-party setup assistance & guidance for satellite radio devices. Not affiliated with Sirius XM Holdings Inc.
+        <button class="close-disclaimer" onclick="dismissDisclaimer()" title="Close Disclaimer">&times;</button>
+    </div>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="navbar">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-radio"></i> Radio <span>Service</span>
+            </a>
+
+            <!-- Mobile Toggle -->
+            <button class="mobile-toggle" onclick="toggleMenu()" aria-label="Toggle Menu">
+                <i class="fa-solid fa-bars" id="menuIcon"></i>
+            </button>
+
+            <!-- Navigation Links -->
+            <div class="nav-container" id="navContainer">
+                <ul class="nav-links">
+                    <li><a href="radio-setup.html">Services</a></li>
+                    <li><a href="index.html#how-it-works">How It Works</a></li>
+                    <li><a href="index.html#faq">FAQ</a></li>
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="contact-us.html">Contact Us</a></li>
+                </ul>
+                <a href="tel:+14067474507" class="header-cta">
+                    <i class="fa-solid fa-phone"></i> Call: +1 (406) 747-4507
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Title Header -->
+    <section class="page-header">
+        <h1>Satellite Radio Signal Troubleshooting</h1>
+        <p>Fix common radio error codes, antenna signal dropouts, and audio interruption issues with our quick step-by-step troubleshooting guide.</p>
+    </section>
+
+    <!-- Main Content Section -->
+    <section class="content-section">
+
+        <h2 style="font-size: 28px; color: var(--dark-blue); margin-bottom: 25px; text-align: center; font-weight: 800;">Common Radio Errors & Fixes</h2>
+
+        <div class="issues-grid">
+
+            <!-- Issue 1 -->
+            <div class="issue-card">
+                <span class="issue-badge"><i class="fa-solid fa-triangle-exclamation"></i> Error Code</span>
+                <h3>"Check Antenna" Message</h3>
+                <p>This warning indicates that your radio tuner cannot detect a proper connection with your satellite antenna cable.</p>
+                <ul class="solutions-list">
+                    <li><i class="fa-solid fa-circle-check"></i> Disconnect and firmly re-seat the golden SMB antenna plug into the dock.</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Inspect the thin antenna cable for sharp bends, pinches, or cuts.</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Ensure the antenna magnetic base is mounted securely on a metal surface.</li>
+                </ul>
+            </div>
+
+            <!-- Issue 2 -->
+            <div class="issue-card">
+                <span class="issue-badge"><i class="fa-solid fa-satellite"></i> Signal Loss</span>
+                <h3>"Acquiring Signal" / Audio Cutouts</h3>
+                <p>Occurs when physical obstructions block the direct line of sight between your antenna and satellites in the sky.</p>
+                <ul class="solutions-list">
+                    <li><i class="fa-solid fa-circle-check"></i> For homes, position the antenna outside or near a south-facing window.</li>
+                    <li><i class="fa-solid fa-circle-check"></i> For vehicles, ensure the antenna is on the highest point of the roof.</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Avoid parking directly under tall buildings, parking garages, or dense trees.</li>
+                </ul>
+            </div>
+
+            <!-- Issue 3 -->
+            <div class="issue-card">
+                <span class="issue-badge"><i class="fa-solid fa-volume-xmark"></i> Sound Issue</span>
+                <h3>No Audio Output</h3>
+                <p>If your channel artwork displays fine but no sound is playing through your car or home speakers.</p>
+                <ul class="solutions-list">
+                    <li><i class="fa-solid fa-circle-check"></i> Verify Aux cable or FM Transmitter frequency matches your vehicle radio tuner.</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Check the volume knob on both the satellite receiver dock and your main stereo.</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Try switching to Channel 1 (Preview) to test sound output.</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- Assistance Callout -->
+        <div class="help-callout">
+            <h3>Still Not Getting Signal or Sound?</h3>
+            <p>If you've checked your antenna cables and repositioned your unit but still face audio interruptions, our support team can guide you live over the phone.</p>
+            <a href="tel:+14067474507" class="header-cta" style="font-size: 16px; padding: 12px 28px;">
+                <i class="fa-solid fa-headset"></i> Call Signal Helpline: +1 (406) 747-4507
+            </a>
+        </div>
+
+    </section>
+
+    <!-- Call To Action Banner -->
+    <section class="cta-banner">
+        <div class="cta-container">
+            <h2>Get Immediate Phone Signal Guidance</h2>
+            <p>Speak to an independent support specialist to resolve your satellite radio setup issues quickly.</p>
+            <a href="tel:+14067474507" class="cta-phone-btn">
+                <i class="fa-solid fa-phone"></i> Call +1 (406) 747-4507
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <h3>Radio Service</h3>
+                    <p>Dedicated independent setup assistance, configuration advice, and user guide services for satellite radio receiver owners nationwide.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="radio-setup.html">Receiver Setup Guide</a></li>
+                        <li><a href="radio-id-help.html">Find Radio ID / ESN</a></li>
+                        <li><a href="signal-troubleshooting.html">Signal Repair Help</a></li>
+                        <li><a href="plan-assistance.html">Plan Options Guide</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Company Info</h4>
+                    <ul>
+                        <li><a href="about-us.html">About Us</a></li>
+                        <li><a href="contact-us.html">Contact Us</a></li>
+                        <li><a href="disclaimer.html">Disclaimer</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Legal & Policy</h4>
+                    <ul>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms-and-conditions.html">Terms & Conditions</a></li>
+                        <li><a href="refund-policy.html">Refund Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Standard Exact Disclaimer Box -->
+            <div class="disclaimer-box">
+                <strong>Legal Disclaimer:</strong> All satellite radio product names, logos, brands, and trademarks displayed on this site are the property of their respective owners. Their appearance does not imply any partnership, authorization, or official affiliation with xmradioservices.com. All content on this website is the intellectual property of xmradioservices.com and/or its content providers and is protected under U.S. and international copyright laws. Any reproduction, distribution, or use of the content without prior written consent is strictly prohibited and may result in legal action. By accessing or using this website, you acknowledge and agree that xmradioservices.com is an independent third-party guidance provider and is not liable for any direct, indirect, or incidental loss arising from information, offers, or external links provided herein. For inquiries, please contact us at support@xmradioservices.com.
+            </div>
+
+            <div class="copyright">
+                &copy; 2026 xmradioservices.com. All Rights Reserved. | Independent Third-Party Support Provider.
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        function toggleMenu() {
+            const navContainer = document.getElementById('navContainer');
+            const menuIcon = document.getElementById('menuIcon');
+            
+            navContainer.classList.toggle('active');
+            
+            if (navContainer.classList.contains('active')) {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-xmark');
+            } else {
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            }
+        }
+
+        function dismissDisclaimer() {
+            const disclaimer = document.getElementById('topDisclaimer');
+            disclaimer.style.display = 'none';
+        }
+    </script>
+</body>
+</html>
